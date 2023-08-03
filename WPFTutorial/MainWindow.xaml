@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:WPFTutorial"
         xmlns:usercontrols="clr-namespace:WPFTutorial.View.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="300">
     <Grid>
+        <!-- menu conrol example
         <Grid.RowDefinitions >
             <RowDefinition Height="70"/>
             <RowDefinition/>
@@ -15,7 +16,20 @@
         </Grid.RowDefinitions>
 
         <usercontrols:MenuBar />
-
+        -->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <usercontrols:ClearableTextBox Grid.Row="1" Width="250" Height="40" Placeholder="First Name"/>
+        <usercontrols:ClearableTextBox Grid.Row="2" Width="250" Height="40" Placeholder="Last Name"/>
+        <usercontrols:ClearableTextBox Grid.Row="3" Width="250" Height="40" Placeholder="Email"/>
+        <usercontrols:ClearableTextBox Grid.Row="4" Width="250" Height="40" Placeholder="Phone"/>
 
     </Grid>
 </Window>
