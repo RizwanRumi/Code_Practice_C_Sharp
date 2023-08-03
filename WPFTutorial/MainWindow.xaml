@@ -56,13 +56,22 @@
         <TextBlock Grid.Row="1" Name="tbInfo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         -->
         
-        <!-- File Opening -->
+        <!-- File Opening
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Name="btnFileOpen" Content="Open" Width="100" Height="40" Click="btnFileOpen_Click"/>
         <TextBlock Grid.Row="1" Name="tbInfo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        
+         -->
+
+        <!-- Folder Browser Dialog example -->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Name="btnOpenFolderBrowser" Content="Open" Width="100" Height="40" Click="btnOpenFolderBrowser_Click" />
+
+
     </Grid> 
 </Window>

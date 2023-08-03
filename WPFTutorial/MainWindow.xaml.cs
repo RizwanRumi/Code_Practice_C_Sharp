@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using WinForms = System.Windows.Forms;
 
 namespace WPFTutorial
 {
@@ -13,7 +14,7 @@ namespace WPFTutorial
         bool running = false;
         public MainWindow()
         {
-            DataContext = this;
+            //DataContext = this;
             InitializeComponent();
         }
 
@@ -24,8 +25,8 @@ namespace WPFTutorial
         public string BoundText
         {
             get { return boundText; }
-            set 
-            { 
+            set
+            {
                 boundText = value;
                 //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BoundText"));
                 OnPropertyChanged();
@@ -37,46 +38,64 @@ namespace WPFTutorial
             BoundText = "Set From Code";
         }
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null) 
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void btnFire_Click(object sender, RoutedEventArgs e)
-        {
-            //MessageBox.Show("Could not open file.", "ERROR!",MessageBoxButton.OK, MessageBoxImage.Error);
-            MessageBoxResult result = MessageBox.Show("Do you agree?", "Agreement!", MessageBoxButton.YesNo, MessageBoxImage.Question);
+        //private void btnFire_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //MessageBox.Show("Could not open file.", "ERROR!",MessageBoxButton.OK, MessageBoxImage.Error);
+        //    MessageBoxResult result = MessageBox.Show("Do you agree?", "Agreement!", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            if (result == MessageBoxResult.Yes)
+        //    if (result == MessageBoxResult.Yes)
+        //    {
+        //        tbInfo.Text = "Agreed";
+        //    }
+        //    else
+        //    {
+        //        tbInfo.Text = "Not Agreed";
+        //    }
+        //}
+
+        //private void btnFileOpen_Click(object sender, RoutedEventArgs e) 
+        //{
+        //    OpenFileDialog fileDialog = new OpenFileDialog();
+        //    fileDialog.Filter = "C# Source Files | *.cs";
+        //    //fileDialog.InitialDirectory = "C:\\temp";
+        //    fileDialog.Title = "Please select cs source(s) file...";
+        //    fileDialog.Multiselect = true;
+
+        //    bool? success = fileDialog.ShowDialog();
+
+        //    if(success == true)
+        //    {
+        //        string[] paths = fileDialog.FileNames;
+        //        string[] fileNames = fileDialog.SafeFileNames;
+
+        //        //tbInfo.Text = fileName;
+        //    }
+        //    else
+        //    {
+        //        // did not pick anything
+        //    }
+        //}
+
+        private void btnOpenFolderBrowser_Click(object sender, RoutedEventArgs e)
+        {
+            WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+            dialog.InitialDirectory = "E:\\C#_Projects\\WPFTutorial";
+
+
+            WinForms.DialogResult result = dialog.ShowDialog();
+
+            if(result == WinForms.DialogResult.OK)
             {
-                tbInfo.Text = "Agreed";
+                string folder = dialog.SelectedPath;
             }
             else
             {
-                tbInfo.Text = "Not Agreed";
-            }
-        }
 
-        private void btnFileOpen_Click(object sender, RoutedEventArgs e) 
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "C# Source Files | *.cs";
-            //fileDialog.InitialDirectory = "C:\\temp";
-            fileDialog.Title = "Please select cs source(s) file...";
-            fileDialog.Multiselect = true;
-
-            bool? success = fileDialog.ShowDialog();
-            
-            if(success == true)
-            {
-                string[] paths = fileDialog.FileNames;
-                string[] fileNames = fileDialog.SafeFileNames;
-
-                //tbInfo.Text = fileName;
-            }
-            else
-            {
-                // did not pick anything
             }
         }
 
