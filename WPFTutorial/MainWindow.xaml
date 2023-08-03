@@ -17,6 +17,7 @@
 
         <usercontrols:MenuBar />
         -->
+        <!-- Custom Textbox control example
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -30,6 +31,19 @@
         <usercontrols:ClearableTextBox Grid.Row="2" Width="250" Height="40" Placeholder="Last Name"/>
         <usercontrols:ClearableTextBox Grid.Row="3" Width="250" Height="40" Placeholder="Email"/>
         <usercontrols:ClearableTextBox Grid.Row="4" Width="250" Height="40" Placeholder="Phone"/>
+        -->
 
-    </Grid>
+        <!-- Data Binding Example-->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox Name="txtInput" VerticalContentAlignment="Center" Width="250" Height="40"
+                 FontSize="16" Text="{Binding BoundText, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}"/>
+        <Button Grid.Row="1" Name="btnSet" Content="Set" Width="100" Height="40" Click="btnSet_Click" />
+        <TextBlock Grid.Row="2" Name="tbResult" FontSize="16" Text="{Binding BoundText}"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+    </Grid> 
 </Window>
