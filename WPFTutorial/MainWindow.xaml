@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFTutorial"
         xmlns:usercontrols="clr-namespace:WPFTutorial.View.UserControls"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="300">
+        Title="MainWindow" Height="400" Width="600">
     <Grid>
         <!-- menu conrol example
         <Grid.RowDefinitions >
@@ -47,13 +47,22 @@
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
         -->
         
-        <!-- MessageBox example -->
+        <!-- MessageBox example 
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Button Name="btnFire" Content="Fire" Width="100" Height="40" Click="btnFire_Click"/>
         <TextBlock Grid.Row="1" Name="tbInfo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-
+        -->
+        
+        <!-- File Opening -->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Name="btnFileOpen" Content="Open" Width="100" Height="40" Click="btnFileOpen_Click"/>
+        <TextBlock Grid.Row="1" Name="tbInfo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
     </Grid> 
 </Window>

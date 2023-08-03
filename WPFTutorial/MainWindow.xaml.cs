@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.Win32;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 
@@ -53,6 +54,29 @@ namespace WPFTutorial
             else
             {
                 tbInfo.Text = "Not Agreed";
+            }
+        }
+
+        private void btnFileOpen_Click(object sender, RoutedEventArgs e) 
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "C# Source Files | *.cs";
+            //fileDialog.InitialDirectory = "C:\\temp";
+            fileDialog.Title = "Please select cs source(s) file...";
+            fileDialog.Multiselect = true;
+
+            bool? success = fileDialog.ShowDialog();
+            
+            if(success == true)
+            {
+                string[] paths = fileDialog.FileNames;
+                string[] fileNames = fileDialog.SafeFileNames;
+
+                //tbInfo.Text = fileName;
+            }
+            else
+            {
+                // did not pick anything
             }
         }
 
