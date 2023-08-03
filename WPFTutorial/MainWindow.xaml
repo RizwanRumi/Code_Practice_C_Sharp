@@ -33,7 +33,7 @@
         <usercontrols:ClearableTextBox Grid.Row="4" Width="250" Height="40" Placeholder="Phone"/>
         -->
 
-        <!-- Data Binding Example-->
+        <!-- Data Binding Example
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -45,5 +45,15 @@
         <Button Grid.Row="1" Name="btnSet" Content="Set" Width="100" Height="40" Click="btnSet_Click" />
         <TextBlock Grid.Row="2" Name="tbResult" FontSize="16" Text="{Binding BoundText}"
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        -->
+        
+        <!-- MessageBox example -->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Name="btnFire" Content="Fire" Width="100" Height="40" Click="btnFire_Click"/>
+        <TextBlock Grid.Row="1" Name="tbInfo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
     </Grid> 
 </Window>
