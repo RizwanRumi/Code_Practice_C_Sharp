@@ -9,39 +9,39 @@ namespace WPFTutorial
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : Window //, INotifyPropertyChanged
     {
-        bool running = false;
+        //bool running = false;
         public MainWindow()
         {
             //DataContext = this;
             InitializeComponent();
         }
 
-        private string boundText;
+        //private string boundText;
 
-        public event PropertyChangedEventHandler? PropertyChanged;
+        //public event PropertyChangedEventHandler? PropertyChanged;
 
-        public string BoundText
-        {
-            get { return boundText; }
-            set
-            {
-                boundText = value;
-                //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BoundText"));
-                OnPropertyChanged();
-            }
-        }
+        //public string BoundText
+        //{
+        //    get { return boundText; }
+        //    set
+        //    {
+        //        boundText = value;
+        //        //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("BoundText"));
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        private void btnSet_Click(object sender, RoutedEventArgs e)
-        {
-            BoundText = "Set From Code";
-        }
+        //private void btnSet_Click(object sender, RoutedEventArgs e)
+        //{
+        //    BoundText = "Set From Code";
+        //}
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
         //private void btnFire_Click(object sender, RoutedEventArgs e)
         //{
@@ -81,22 +81,37 @@ namespace WPFTutorial
         //    }
         //}
 
-        private void btnOpenFolderBrowser_Click(object sender, RoutedEventArgs e)
+        //private void btnOpenFolderBrowser_Click(object sender, RoutedEventArgs e)
+        //{
+        //    WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
+        //    dialog.InitialDirectory = "E:\\C#_Projects\\WPFTutorial";
+
+
+        //    WinForms.DialogResult result = dialog.ShowDialog();
+
+        //    if(result == WinForms.DialogResult.OK)
+        //    {
+        //        string folder = dialog.SelectedPath;
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            WinForms.FolderBrowserDialog dialog = new WinForms.FolderBrowserDialog();
-            dialog.InitialDirectory = "E:\\C#_Projects\\WPFTutorial";
 
+        }
 
-            WinForms.DialogResult result = dialog.ShowDialog();
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
 
-            if(result == WinForms.DialogResult.OK)
-            {
-                string folder = dialog.SelectedPath;
-            }
-            else
-            {
+        }
 
-            }
+        private void btnClear_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         //    private void btnToggle_Click(object sender, RoutedEventArgs e)

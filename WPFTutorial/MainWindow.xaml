@@ -65,13 +65,30 @@
         <TextBlock Grid.Row="1" Name="tbInfo" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
          -->
 
-        <!-- Folder Browser Dialog example -->
+        <!-- Folder Browser Dialog example 
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Button Name="btnOpenFolderBrowser" Content="Open" Width="100" Height="40" Click="btnOpenFolderBrowser_Click" />
+        -->
 
+        <!-- ListView example -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="txtEntry" Height="35" FontSize="16"/>
+        <Button Grid.Column="1" Name="btnAdd" Width="50" Content="Add" Click="btnAdd_Click" HorizontalAlignment="Left"/>
+        <Button Grid.Column="1" Name="btnDelete" Width="50" Content="Del" Click="btnDelete_Click" HorizontalAlignment="Left" Margin="60,0,0,0"/>
+        <Button Grid.Column="1" Name="btnClear" Width="50" Content="Clear" Click="btnClear_Click" HorizontalAlignment="Left" Margin="120,0,0,0"/>
+
+        <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2"/>
 
     </Grid> 
 </Window>
