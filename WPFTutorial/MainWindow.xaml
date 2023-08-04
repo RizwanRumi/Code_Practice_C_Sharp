@@ -88,8 +88,8 @@
         <Button Grid.Column="1" Name="btnDelete" Width="50" Content="Del" Click="btnDelete_Click" HorizontalAlignment="Left" Margin="60,0,0,0"/>
         <Button Grid.Column="1" Name="btnClear" Width="50" Content="Clear" Click="btnClear_Click" HorizontalAlignment="Left" Margin="120,0,0,0"/>
 
-        <!-- selectionmode is optional for multiple selection-->
-        <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2" SelectionMode="Multiple"/>
+        
+        <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}"/>
 
     </Grid> 
 </Window>
