@@ -16,36 +16,36 @@ namespace WPFTutorial
     {
         public MainWindow()
         {
-            DataContext = this;
-            entries = new ObservableCollection<string>();
+            //DataContext = this;
+            //entries = new ObservableCollection<string>();
             
             InitializeComponent();
         }
 
-        private ObservableCollection<string> entries;
+       // private ObservableCollection<string> entries;
 
-       public ObservableCollection<string> Entries
-        {
-            get { return entries; }
-            set { entries = value; }
-        }
+       //public ObservableCollection<string> Entries
+       // {
+       //     get { return entries; }
+       //     set { entries = value; }
+       // }
 
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            Entries.Add(txtEntry.Text);
-        }
+        //private void btnAdd_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Entries.Add(txtEntry.Text);
+        //}
 
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            string selectedItem = (string)lvEntries.SelectedItem;
-            Entries.Remove(selectedItem);
-        }
+        //private void btnDelete_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string selectedItem = (string)lvEntries.SelectedItem;
+        //    Entries.Remove(selectedItem);
+        //}
 
-        private void btnClear_Click(object sender, RoutedEventArgs e)
-        {
-            Entries.Clear();
-        }
+        //private void btnClear_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Entries.Clear();
+        //}
 
     }
 }

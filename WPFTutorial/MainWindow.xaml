@@ -73,7 +73,7 @@
         <Button Name="btnOpenFolderBrowser" Content="Open" Width="100" Height="40" Click="btnOpenFolderBrowser_Click" />
         -->
 
-        <!-- ListView example -->
+        <!-- ListView example 
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition/>
@@ -90,6 +90,39 @@
 
         
         <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}"/>
+        -->
+        
+        <!-- Stackpanel example -->
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Height="40" Width="75" Margin="2" Content="A"/>
+            <Button Height="40" Width="75" Margin="2" Content="B"/>
+            <Button Height="40" Width="75" Margin="2" Content="C"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Search: " />
+                <TextBox Width="150"/>
+                <Button Content="Go" Width="40"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10">
+                <ComboBox Width="150" Height="30" Margin="2" />
+                <TextBox Width="150" Height="30" Margin="2" />
+                <TextBox Width="150" Height="30" Margin="2" />
+                <TextBox Width="150" Height="30" Margin="2" />
+                <TextBox Width="150" Height="30" Margin="2" />
+            </StackPanel>
+
+        </StackPanel>
+        
+        
+        
     </Grid> 
 </Window>
