@@ -22,10 +22,10 @@ namespace WPFTutorial
             InitializeComponent();
         }
 
-        private void btnDetails_Click(object sender, RoutedEventArgs e)
-        {
-            expanderDetails.IsExpanded = !expanderDetails.IsExpanded;
-        }
+        //private void btnDetails_Click(object sender, RoutedEventArgs e)
+        //{
+        //    expanderDetails.IsExpanded = !expanderDetails.IsExpanded;
+        //}
 
         // private ObservableCollection<string> entries;
 
