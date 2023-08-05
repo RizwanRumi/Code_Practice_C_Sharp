@@ -3,10 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFTutorial"
+        xmlns:local="clr-namespace:WPFTutorial" Background="#333333"
         xmlns:usercontrols="clr-namespace:WPFTutorial.View.UserControls"
-        mc:Ignorable="d"
+        mc:Ignorable="d" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
         Title="MainWindow" Height="400" Width="600">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
+    </WindowChrome.WindowChrome>
+    
+    
     <Grid>
         <!-- menu conrol example
         <Grid.RowDefinitions >
@@ -173,7 +178,7 @@
         </Grid>
          -->
         
-        <!-- Scroll Viewer -->
+        <!-- Scroll Viewer
         <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"> 
             <StackPanel>
                 <TextBox Height="30" Width="200" Margin="10"/>
@@ -185,6 +190,22 @@
                 <TextBox Height="30" Width="200" Margin="10"/>
             </StackPanel>
         </ScrollViewer>
-
+        -->
+        
+        <!-- Window and Title Bar example -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="btnMinimize" Content="_" Width="40" Height="40" BorderBrush="Transparent"
+                    Background="Transparent" Click="btnMinimize_Click" Foreground="White"/>
+            <Button x:Name="btnMaximize" Content="-" Width="40" Height="40" BorderBrush="Transparent"
+                    Background="Transparent" Click="btnMaximize_Click"  Foreground="White"/>
+            <Button x:Name="btnClose" Content="x" Width="40" Height="40" BorderBrush="Transparent"
+                    Background="Transparent" Click="btnClose_Click"  Foreground="White"/>
+        </StackPanel>
+        
+        
     </Grid> 
 </Window>
