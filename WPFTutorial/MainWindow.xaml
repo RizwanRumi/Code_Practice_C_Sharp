@@ -123,7 +123,7 @@
         </StackPanel>
          -->
         
-        <!-- Grid Splitter -->
+        <!-- Grid Splitter example 
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
@@ -151,8 +151,28 @@
         <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" />
 
         <Rectangle Grid.Row="3" Fill="Blue"/>
+        -->
 
-
+        <!-- Expendar example -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Background="LightBlue">
+                <TextBlock Text="Name" FontSize="16"/>
+                <Expander Header="More Details">
+                    <TextBlock Text="Description" FontSize="16"/>
+                </Expander>
+                <Button x:Name="btnDetails" Width="100" Height="20" Content="Details" Click="btnDetails_Click"/>
+            </StackPanel>
+            <Expander Name="expanderDetails" Background="DarkGray" BorderThickness="0" 
+                      Grid.Column="1" ExpandDirection="Left">
+                <Rectangle Fill="DarkGray" Width="125"/>
+            </Expander>
+        </Grid>
+        
+        
 
     </Grid> 
 </Window>

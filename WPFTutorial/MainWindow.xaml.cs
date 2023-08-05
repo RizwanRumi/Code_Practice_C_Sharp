@@ -22,13 +22,18 @@ namespace WPFTutorial
             InitializeComponent();
         }
 
-       // private ObservableCollection<string> entries;
+        private void btnDetails_Click(object sender, RoutedEventArgs e)
+        {
+            expanderDetails.IsExpanded = !expanderDetails.IsExpanded;
+        }
 
-       //public ObservableCollection<string> Entries
-       // {
-       //     get { return entries; }
-       //     set { entries = value; }
-       // }
+        // private ObservableCollection<string> entries;
+
+        //public ObservableCollection<string> Entries
+        // {
+        //     get { return entries; }
+        //     set { entries = value; }
+        // }
 
 
         //private void btnAdd_Click(object sender, RoutedEventArgs e)
