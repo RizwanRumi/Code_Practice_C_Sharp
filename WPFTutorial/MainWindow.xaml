@@ -92,7 +92,7 @@
         <ListView Name="lvEntries" Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Entries}"/>
         -->
         
-        <!-- Stackpanel example -->
+        <!-- Stackpanel example
 
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -121,8 +121,38 @@
             </StackPanel>
 
         </StackPanel>
+         -->
         
-        
-        
+        <!-- Grid Splitter -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="Red" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Fill="Yellow"/>
+            <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" />
+            <Rectangle Grid.Column="2" Fill="Orange"/>
+            <GridSplitter Grid.Column="3" HorizontalAlignment="Stretch" />
+            <Rectangle Grid.Column="4" Fill="Green"/>
+        </Grid>
+
+        <GridSplitter Grid.Row="2" HorizontalAlignment="Stretch" />
+
+        <Rectangle Grid.Row="3" Fill="Blue"/>
+
+
+
     </Grid> 
 </Window>
