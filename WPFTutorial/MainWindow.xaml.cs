@@ -1,17 +1,8 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows;
-using WinForms = System.Windows.Forms;
+﻿using System.Windows;
+using WPFTutorial.View.UserControls;
 
 namespace WPFTutorial
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -22,27 +13,43 @@ namespace WPFTutorial
             InitializeComponent();
         }
 
-        private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        private void btnNormal_Click(object sender, RoutedEventArgs e)
         {
-            DragMove();
+            NormalWindow normalWindow = new NormalWindow(); 
+            normalWindow.Show();
         }
 
-        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        private void btnModal_Click(object sender, RoutedEventArgs e)
         {
-            WindowState = WindowState.Minimized;
+            ModalWindow modalWindow = new ModalWindow(this);
+            Opacity = 0.4;
+            modalWindow.ShowDialog();
+            Opacity = 1;
+            if(modalWindow.Success)
+                txtInput.Text = modalWindow.Input;
         }
 
-        private void btnMaximize_Click(object sender, RoutedEventArgs e)
-        {
-            if(WindowState == WindowState.Maximized) 
-                WindowState = WindowState.Normal;
-            else WindowState = WindowState.Maximized;
-        }
+        //private void Window_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        //{
+        //    DragMove();
+        //}
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
+        //private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        //{
+        //    WindowState = WindowState.Minimized;
+        //}
+
+        //private void btnMaximize_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if(WindowState == WindowState.Maximized) 
+        //        WindowState = WindowState.Normal;
+        //    else WindowState = WindowState.Maximized;
+        //}
+
+        //private void btnClose_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Close();
+        //}
 
         //private void btnDetails_Click(object sender, RoutedEventArgs e)
         //{

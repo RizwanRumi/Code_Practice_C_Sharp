@@ -3,13 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFTutorial" Background="#333333"
+        xmlns:local="clr-namespace:WPFTutorial" 
         xmlns:usercontrols="clr-namespace:WPFTutorial.View.UserControls"
-        mc:Ignorable="d" WindowStyle="None" MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600">
-    <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
+   
     
     
     <Grid>
@@ -192,7 +190,7 @@
         </ScrollViewer>
         -->
         
-        <!-- Window and Title Bar example -->
+        <!-- Window and Title Bar example 
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
@@ -205,7 +203,14 @@
             <Button x:Name="btnClose" Content="x" Width="40" Height="40" BorderBrush="Transparent"
                     Background="Transparent" Click="btnClose_Click"  Foreground="White"/>
         </StackPanel>
+        -->
         
+        <!-- Custom window with show and showdialog -->
+        <StackPanel>
+            <Button x:Name="btnNormal" Width="100" Height="50" Content="Normal" Margin="5" Click="btnNormal_Click"/>
+            <Button x:Name="btnModal" Width="100" Height="50" Content="Modal" Margin="5" Click="btnModal_Click"/>
+            <TextBox Name="txtInput" Width="200" Height="40" FontSize="16"/>
+        </StackPanel>
         
     </Grid> 
 </Window>
