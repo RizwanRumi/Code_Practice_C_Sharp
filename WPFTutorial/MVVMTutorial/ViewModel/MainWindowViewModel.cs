@@ -1,34 +1,19 @@
 ﻿using MVVMTutorial.Model;
 using MVVMTutorial.MVVM;
 using System.Collections.ObjectModel;
+using System.Windows.Controls;
 
 namespace MVVMTutorial.ViewModel
 {
     internal class MainWindowViewModel : ViewModelBase
     {
         public ObservableCollection<Item> Items { get; set; }
+        public RelayCommand AddCommand => new(execute => AddItem());
+        public RelayCommand DeleteCommand => new(execute => DeleteItem(), canExecute => SelectedItem != null );
+        public RelayCommand SaveCommand => new(execute => Save(), canExecute => CanSave() );
         public MainWindowViewModel()
         {
             Items = new ObservableCollection<Item>();
-            Items.Add(new Item
-            {
-                Name = "Property1",
-                SerialNumber = "0001",
-                Quantity = 5
-            });
-
-            Items.Add(new Item
-            {
-                Name = "Property2",
-                SerialNumber = "0002",
-                Quantity = 6
-            });
-            Items.Add(new Item
-            {
-                Name = "Property3",
-                SerialNumber = "0003",
-                Quantity = 7
-            });
         }
 
         private Item selectedItem;
@@ -42,6 +27,30 @@ namespace MVVMTutorial.ViewModel
             }
         }
 
-       
+       private void AddItem()
+        {
+            Items.Add(new Item
+            {
+                Name = "New Item",
+                SerialNumber = "xxxx",
+                Quantity = 0
+            });
+
+        }
+
+        private void DeleteItem()
+        {
+            Items.Remove(selectedItem);
+        }
+
+        private void Save()
+        {
+            //save to file/db
+        }
+
+        private bool CanSave()
+        {
+            return true;
+        }
     }
 }
