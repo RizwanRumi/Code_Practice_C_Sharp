@@ -1,0 +1,34 @@
+﻿<Window x:Class="MVVMTutorial.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVMTutorial"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Height="25" Width="230" Margin="0,0,100,0" FontSize="20"> MVVM Tutorial Example </TextBlock> 
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid CanUserAddRows="False" CanUserDeleteRows="False"></DataGrid>
+
+            <StackPanel Grid.Column="1">
+                <Label Content="Name"/>
+                <TextBox Margin="5,0,5,15"/>
+                <Label Content="Serial Number"/>
+                <TextBox Margin="5,0,5,15"/>
+                <Label Content="Quantity"/>
+                <TextBox Margin="5,0,5,15"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
