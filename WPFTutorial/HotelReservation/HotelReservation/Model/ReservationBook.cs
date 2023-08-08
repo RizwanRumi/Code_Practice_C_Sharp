@@ -21,7 +21,7 @@ namespace HotelReservation.Model
         {
             foreach (Reservation existingReservation in reservations)
             {
-                if (existingReservation.Conflicts(reservation) 
+                if (existingReservation.Conflicts(reservation))
                 {
                     throw new ReservationConflictException(existingReservation, reservation);
                 }
