@@ -6,9 +6,10 @@
         xmlns:local="clr-namespace:HotelReservation" 
         xmlns:views="clr-namespace:HotelReservation.Views"
         mc:Ignorable="d"
-        Title="Hotel Reservation" Height="450" Width="800">
+        Title="Hotel Reservation" Height="450" Width="800" FontSize="14">
     
     <Grid MaxWidth="600" Margin="20 10">
-        <views:MakeReservationView />
+        <!--<views:MakeReservationView />-->
+        <views:ReservationListingView />
     </Grid>
 </Window>
