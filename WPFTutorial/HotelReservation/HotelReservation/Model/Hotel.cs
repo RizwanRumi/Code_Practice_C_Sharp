@@ -15,9 +15,9 @@ namespace HotelReservation.Model
             reservationBook = new ReservationBook();
         }
 
-        public IEnumerable<Reservation> GetReservationsForUser(string username)
+        public IEnumerable<Reservation> GetAllReservations()
         {
-            return reservationBook.GetReservationsForUser(username);
+            return reservationBook.GetAllReservations();
         }
 
         public void MakeReservation(Reservation reservation)

@@ -13,13 +13,12 @@ namespace HotelReservation.Model
         }
 
         /// <summary>
-        /// Get the reservation for a user
+        /// Get all reservations.
         /// </summary>
-        /// <param name="username">The username of the user.</param>
-        /// <returns>the reservations for the user.</returns>
-        public IEnumerable<Reservation> GetReservationsForUser(string username)
+        /// <returns>All reservations in the reservation book.</returns>
+        public IEnumerable<Reservation> GetAllReservations()
         {
-            return reservations.Where(r => r.UserName == username);
+            return reservations;
         }
 
         /// <summary>
