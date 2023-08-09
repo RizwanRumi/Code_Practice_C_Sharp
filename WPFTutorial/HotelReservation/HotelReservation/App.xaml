@@ -11,5 +11,10 @@
         <Style TargetType="TextBox">
             <Setter Property="Padding" Value="2" />
         </Style>
+
+        <Style TargetType="TextBlock" x:Key="Header">
+            <Setter Property="FontSize" Value="24" />
+        </Style>
+        
     </Application.Resources>
 </Application>
