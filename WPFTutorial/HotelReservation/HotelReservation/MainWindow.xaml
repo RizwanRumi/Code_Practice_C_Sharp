@@ -3,10 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:HotelReservation"
+        xmlns:local="clr-namespace:HotelReservation" 
+        xmlns:views="clr-namespace:HotelReservation.Views"
         mc:Ignorable="d"
         Title="Hotel Reservation" Height="450" Width="800">
-    <Grid>
-
+    
+    <Grid MaxWidth="600" Margin="20 10">
+        <views:MakeReservationView />
     </Grid>
 </Window>
