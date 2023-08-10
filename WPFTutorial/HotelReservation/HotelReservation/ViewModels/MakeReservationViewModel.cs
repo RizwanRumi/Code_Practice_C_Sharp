@@ -67,5 +67,10 @@ namespace HotelReservation.ViewModels
 
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
+
+        public MakeReservationViewModel()
+        {
+
+        }
     }
 }
