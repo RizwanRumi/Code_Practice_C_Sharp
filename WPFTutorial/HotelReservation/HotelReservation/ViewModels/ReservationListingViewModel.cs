@@ -21,8 +21,8 @@ namespace HotelReservation.ViewModels
             _reservations = new ObservableCollection<ReservationViewModel>();
 
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(1,2), "User 1", DateTime.Now, DateTime.Now)));
-            _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(3,2), "User 1", DateTime.Now, DateTime.Now)));
-            _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(5,1), "User 1", DateTime.Now, DateTime.Now)));
+            _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(3, 2), "User 2", DateTime.Now, DateTime.Now)));
+            _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(5, 1), "User 3", DateTime.Now, DateTime.Now)));
         }
     }
 }
