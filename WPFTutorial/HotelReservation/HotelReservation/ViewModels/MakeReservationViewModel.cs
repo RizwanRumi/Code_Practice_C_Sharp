@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HotelReservation.Commands;
+using HotelReservation.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -52,7 +54,7 @@ namespace HotelReservation.ViewModels
             }
         }
 
-        private DateTime _startDate;
+        private DateTime _startDate = new DateTime(2023, 8, 1);
         public DateTime StartDate
         {
             get
@@ -61,16 +63,31 @@ namespace HotelReservation.ViewModels
             }
             set
             {
-                _startDate = value; OnPropertyChanged(nameof(StartDate));
+                _startDate = value;
+                OnPropertyChanged(nameof(StartDate));
+            }
+        }
+        private DateTime _endDate = new DateTime(2023, 8, 7);
+        public DateTime EndDate
+        {
+            get
+            {
+                return _endDate;
+            }
+            set
+            {
+                _endDate = value; 
+                 OnPropertyChanged(nameof(EndDate));
             }
         }
 
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
 
-        public MakeReservationViewModel()
+        public MakeReservationViewModel(Hotel hotel)
         {
-
+            SubmitCommand = new MakeReservationCommand(this, hotel);
+            CancelCommand = new CancelMakeReservationCommand();
         }
     }
 }
