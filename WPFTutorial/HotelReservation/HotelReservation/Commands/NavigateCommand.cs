@@ -1,7 +1,5 @@
-﻿using HotelReservation.Stores;
-using HotelReservation.ViewModels;
-using System;
-using System.Windows.Navigation;
+﻿
+using HotelReservation.Services;
 
 namespace HotelReservation.Commands
 {
