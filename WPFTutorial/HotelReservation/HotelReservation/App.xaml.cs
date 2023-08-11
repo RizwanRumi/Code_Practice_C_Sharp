@@ -46,7 +46,7 @@ namespace HotelReservation
 
         private ReservationListingViewModel CreateReservationViewModel() 
         {
-            return new ReservationListingViewModel(new NavigationService(navigationStore, CreateMakeReservationViewModel));
+            return new ReservationListingViewModel(hotel, new NavigationService(navigationStore, CreateMakeReservationViewModel));
         }
 
     }
