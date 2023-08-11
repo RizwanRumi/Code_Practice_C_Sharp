@@ -1,5 +1,6 @@
 ﻿using HotelReservation.Exceptions;
 using HotelReservation.Model;
+using HotelReservation.Services;
 using HotelReservation.Stores;
 using HotelReservation.ViewModels;
 using System;
@@ -40,12 +41,12 @@ namespace HotelReservation
 
         private MakeReservationViewModel CreateMakeReservationViewModel()
         {
-            return new MakeReservationViewModel(hotel, navigationStore, CreateReservationViewModel);
+            return new MakeReservationViewModel(hotel, new NavigationService(navigationStore, CreateReservationViewModel));
         }
 
         private ReservationListingViewModel CreateReservationViewModel() 
         {
-            return new ReservationListingViewModel(navigationStore, CreateMakeReservationViewModel);
+            return new ReservationListingViewModel(new NavigationService(navigationStore, CreateMakeReservationViewModel));
         }
 
     }
