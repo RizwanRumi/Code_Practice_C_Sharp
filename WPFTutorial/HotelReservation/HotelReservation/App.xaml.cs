@@ -26,7 +26,7 @@ namespace HotelReservation
         }
         protected override void OnStartup(StartupEventArgs e)
         {
-            navigationStore.CurrentViewModel = new ReservationListingViewModel();
+            navigationStore.CurrentViewModel = new ReservationListingViewModel(navigationStore);
 
             MainWindow = new MainWindow() 
             {
