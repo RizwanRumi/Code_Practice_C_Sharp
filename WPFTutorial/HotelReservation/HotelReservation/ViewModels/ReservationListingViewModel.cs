@@ -18,11 +18,11 @@ namespace HotelReservation.ViewModels
         public IEnumerable<ReservationViewModel> ReservationList => _reservations;
 
         public ICommand MakeReservationCommand { get; }
-        public ReservationListingViewModel(NavigationStore navigationStore, Func<MakeReservationViewModel> createViewModel) 
+        public ReservationListingViewModel(Services.NavigationService makeReservationNavigationService) 
         {
             _reservations = new ObservableCollection<ReservationViewModel>();
 
-            MakeReservationCommand = new NavigateCommand(navigationStore, createViewModel);
+            MakeReservationCommand = new NavigateCommand(makeReservationNavigationService);
 
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(1,2), "User 1", DateTime.Now, DateTime.Now)));
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(3, 2), "User 2", DateTime.Now, DateTime.Now)));
