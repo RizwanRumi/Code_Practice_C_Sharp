@@ -2,11 +2,13 @@
 {
     /// <summary>
     /// Delegate is a variable that holds the reference to a method  or pointer to a method
-    /// Use: When we need to send method as a parameter
+    /// Use: When we need to pass method as a parameter
     /// </summary>
 
     delegate int Calculator(int x); // declaring delegate
     
+    delegate void AnonymousDel(int x, int y);
+   
     internal class DelegateExample
     {
         static int value = 10;
@@ -43,7 +45,7 @@
             Console.WriteLine("After calc2 delegate, value is: " + getvalue());
             */
 
-            
+            /*
             //Multicast Delegate : holds the reference of more than one function
             Calculator calc = new Calculator(addition);
             calc += multiply;
@@ -52,7 +54,16 @@
             calc(5);
 
             Console.WriteLine("After calc multicast delegate, value is: " + getvalue());
+            */
 
+
+            // Anonymous Delegate example : pointing a method which has no name, only body is inline.
+            AnonymousDel dl = delegate(int a, int b) 
+            {
+                //Inline content of the method
+                Console.WriteLine("Anonymous delegate ans: {0}", a * b);
+            };
+            dl(5, 10);
         }
     }
 }
