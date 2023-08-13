@@ -396,3 +396,8 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#Other folders files restriction
+.ConsoleApp/
+*.csproj
+*.sln
