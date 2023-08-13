@@ -30,6 +30,11 @@
             return value;
         }
 
+        public static double SumNumber1(int number1, float number2, double number3)
+        {
+            return number1 + number2 + number3;
+        }
+
         static void Main(string[] args)
         {
             /*
@@ -56,7 +61,7 @@
             Console.WriteLine("After calc multicast delegate, value is: " + getvalue());
             */
 
-
+            /*
             // Anonymous Delegate example : pointing a method which has no name, only body is inline.
             AnonymousDel dl = delegate(int a, int b) 
             {
@@ -64,6 +69,14 @@
                 Console.WriteLine("Anonymous delegate ans: {0}", a * b);
             };
             dl(5, 10);
+            */
+
+            // Generic delegates
+            // Func delegate: accept one/more params and return single param, (16 input param)
+            Func<int, float, double, double> object1 = new Func<int, float, double, double>(SumNumber1);
+            double output = object1.Invoke(10, 12.15f, 45.38);
+            Console.WriteLine("Functional Delegate: {0}", output);
+
         }
     }
 }
