@@ -40,6 +40,12 @@
             Console.WriteLine("Action Delegate: {0}", number1 + number2 + number3);
         }
 
+        public static bool CheckTheLength(string name)
+        {
+            if (name.Length < 10) return true;
+            return false;
+        }
+
 
         static void Main(string[] args)
         {
@@ -86,6 +92,12 @@
             // Action delegate: accept one/more input params and return null. (16 input param)
             Action<int, float, double> object2 = new Action<int, float, double>(SumNumber2);
             object2.Invoke(20, 25.25f, 12.45);
+
+            //Predicate delegate: use to validate method's criteria and return boolean
+            // accept only one param and return boolean
+            Predicate<string> object3 = new Predicate<string>(CheckTheLength);
+            bool b = object3.Invoke("Hello Rizwan!");
+            Console.WriteLine("Predicate Delegate: The length of the string is less than 10.( {0} )", b);
 
         }
     }
