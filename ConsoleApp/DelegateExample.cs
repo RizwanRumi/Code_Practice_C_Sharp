@@ -35,6 +35,12 @@
             return number1 + number2 + number3;
         }
 
+        public static void SumNumber2(int number1, float number2, double number3)
+        {
+            Console.WriteLine("Action Delegate: {0}", number1 + number2 + number3);
+        }
+
+
         static void Main(string[] args)
         {
             /*
@@ -72,10 +78,14 @@
             */
 
             // Generic delegates
-            // Func delegate: accept one/more params and return single param, (16 input param)
+            // Func delegate: accept one/more input params and return single param, (16 input param)
             Func<int, float, double, double> object1 = new Func<int, float, double, double>(SumNumber1);
             double output = object1.Invoke(10, 12.15f, 45.38);
             Console.WriteLine("Functional Delegate: {0}", output);
+
+            // Action delegate: accept one/more input params and return null. (16 input param)
+            Action<int, float, double> object2 = new Action<int, float, double>(SumNumber2);
+            object2.Invoke(20, 25.25f, 12.45);
 
         }
     }
