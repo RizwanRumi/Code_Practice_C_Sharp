@@ -5,6 +5,20 @@
     <title></title>
 </head>
 <body>
-    <h1>This is Employee View page</h1>
+    <h5>@ViewData["PageTitle"]</h5>
+
+    @{
+        var employee = ViewData["Employee"] as EmployeeManagement.Models.Employee;
+    }
+
+    <div>
+        Name: @employee.Name
+    </div>
+    <div>
+        Email: @employee.Email
+    </div>
+    <div>
+        Department: @employee.Department
+    </div>
 </body>
 </html>
