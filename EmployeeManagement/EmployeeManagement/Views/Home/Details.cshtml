@@ -1,21 +1,24 @@
 ﻿@model EmployeeManagement.Models.Employee
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <h5>@ViewBag.PageTitle</h5>
 
-    <div>
-        Name: @Model.Name
-    </div>
-    <div>
-        Email: @Model.Email
-    </div>
-    <div>
-        Department: @Model.Department
-    </div>
-</body>
-</html>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Show Selected Employee Details";
+}
+
+
+<h5>@ViewBag.Title</h5>
+
+<div>
+    Name: @Model.Name
+</div>
+<div>
+    Email: @Model.Email
+</div>
+<div>
+    Department: @Model.Department
+</div>
+
+@section Scripts {
+    <script src="~/js/customscript.js"></script>
+}
