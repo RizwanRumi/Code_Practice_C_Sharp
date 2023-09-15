@@ -1,4 +1,4 @@
-﻿@model EmployeeManagement.Models.Employee
+﻿@model EmployeeManagement.ViewModels.HomeDetailsViewModel
 
 
 @{
@@ -6,16 +6,16 @@
 }
 
 
-<h5>@ViewBag.Title</h5>
+<h5>@Model.PageTitle</h5>
 
 <div>
-    Name: @Model.Name
+    Name: @Model.Employee.Name
 </div>
 <div>
-    Email: @Model.Email
+    Email: @Model.Employee.Email
 </div>
 <div>
-    Department: @Model.Department
+    Department: @Model.Employee.Department
 </div>
 
 @section Scripts {
