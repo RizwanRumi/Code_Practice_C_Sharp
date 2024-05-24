@@ -4,7 +4,9 @@
     {
         public int Points { get; set; }
 
-        public event Action? AchievementUnlocked;
+        public delegate void AchievementUnlockedHandler(int points);
+
+        public event AchievementUnlockedHandler? AchievementUnlocked;
 
         public async Task AddPoints(int points)
         {
@@ -14,7 +16,7 @@
 
             if ( Points > 100 ) 
             {
-                AchievementUnlocked?.Invoke();                
+                AchievementUnlocked?.Invoke(Points);                
             }
         }
     }
