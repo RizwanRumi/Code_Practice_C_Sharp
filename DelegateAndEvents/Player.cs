@@ -4,6 +4,8 @@
     {
         public int Points { get; set; }
 
+        public event Action? AchievementUnlocked;
+
         public async Task AddPoints(int points)
         {
             Points += points;
@@ -12,7 +14,7 @@
 
             if ( Points > 100 ) 
             {
-                Console.WriteLine("Congratulations to achieve unlocked for earning points");
+                AchievementUnlocked?.Invoke();                
             }
         }
     }
