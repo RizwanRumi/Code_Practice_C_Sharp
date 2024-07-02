@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -40,13 +41,17 @@ namespace TestConsoleApp
         public int X { get; }
         public int Y { get; }
 
-        public readonly double Distance;
+        public readonly double Distance; 
 
-        public Point(int x, int y, double distance)
+        private readonly IDistanceCalculator _distanceCalculator;
+               
+        // Constructor Injection
+        public Point(int x, int y, IDistanceCalculator distanceCalculator)
         {
             X = x;
             Y = y;
-            Distance = distance;
+            _distanceCalculator = distanceCalculator;
+            Distance = _distanceCalculator.CalculateDistance(X, Y);
         }
     }
 
@@ -89,9 +94,8 @@ namespace TestConsoleApp
                             string[] numbers = line.Split(",");
 
                             if (numbers.Length == 2 && int.TryParse(numbers[0], out int x) && int.TryParse(numbers[1], out int y))
-                            {
-                                double distance = distanceCalculator.CalculateDistance(x, y);
-                                Point p = new Point(x, y, distance); 
+                            {                               
+                                Point p = new Point(x, y, distanceCalculator); 
                                 points.Add(p);
                             }
                         }
