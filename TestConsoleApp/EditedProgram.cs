@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TestConsoleApp
+﻿namespace TestConsoleApp
 {
     public interface IDistanceCalculator
     {
@@ -78,8 +71,8 @@ namespace TestConsoleApp
                     "euclidean" or _ => new EuclideanDistanceCalculator()
                 };
 
-
-                Console.WriteLine("Loading data from " + inputFilePath);
+                Console.WriteLine("Loading data from " + inputFilePath + 
+                                  " and DistanceType: " + distanceType);
 
                 try
                 {
